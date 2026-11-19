@@ -5,31 +5,45 @@ final class DesktopPanel: NSPanel {
     var allowsMainWindow = false
     override var canBecomeKey: Bool { true }
     override var canBecomeMain: Bool { allowsMainWindow }
+
+    convenience init(contentRect: NSRect, styleMask: NSWindow.StyleMask) {
+        self.init(contentRect: contentRect, styleMask: styleMask, backing: .buffered, defer: false)
+        isOpaque = false
+        backgroundColor = .clear
+        // The glass view defines the visible outline of the panel.
+        hasShadow = false
+    }
 }
 
 @MainActor
 func glassHostingView<Content: View>(_ content: Content) -> NSView {
+    let cornerRadius: CGFloat = 24
     let hosting = NSHostingView(rootView: content)
     hosting.autoresizingMask = [.width, .height]
+    let backdrop: NSView
+
     // Look up the public AppKit class at runtime so older SDKs can build the app.
     if #available(macOS 26.0, *), let glassClass = NSClassFromString("NSGlassEffectView") as? NSView.Type {
         let glass = glassClass.init(frame: .zero)
         // The system's default regular glass is suitable for the whole panel.
-        glass.setValue(24.0, forKey: "cornerRadius")
+        glass.setValue(cornerRadius, forKey: "cornerRadius")
         glass.setValue(false, forKey: "effectIsInteractive")
         glass.setValue(hosting, forKey: "contentView")
-        glass.appearance = NSAppearance(named: .darkAqua)
-        return glass
+        backdrop = glass
+    } else {
+        let glass = NSVisualEffectView()
+        glass.material = .hudWindow
+        glass.blendingMode = .behindWindow
+        // Keep the blur active while the autocomplete popover has keyboard focus.
+        glass.state = .active
+        glass.addSubview(hosting)
+        backdrop = glass
     }
-    let glass = NSVisualEffectView()
-    glass.material = .hudWindow
-    glass.blendingMode = .behindWindow
-    // The autocomplete popover takes keyboard focus from the panel.
-    glass.state = .active
-    glass.appearance = NSAppearance(named: .darkAqua)
-    glass.wantsLayer = true
-    glass.layer?.cornerRadius = 24
-    glass.layer?.masksToBounds = true
-    glass.addSubview(hosting)
-    return glass
+
+    backdrop.appearance = NSAppearance(named: .darkAqua)
+    backdrop.wantsLayer = true
+    backdrop.layer?.cornerRadius = cornerRadius
+    backdrop.layer?.cornerCurve = .continuous
+    backdrop.layer?.masksToBounds = true
+    return backdrop
 }

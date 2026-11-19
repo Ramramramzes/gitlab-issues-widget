@@ -28,8 +28,8 @@ cat > "$app/Contents/Info.plist" <<'PLIST'
   <key>CFBundleDisplayName</key><string>GitLab Issues</string>
   <key>CFBundleDevelopmentRegion</key><string>ru</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>3.1.1</string>
-  <key>CFBundleVersion</key><string>11</string>
+  <key>CFBundleShortVersionString</key><string>3.1.2</string>
+  <key>CFBundleVersion</key><string>12</string>
   <key>LSMinimumSystemVersion</key><string>13.0</string>
   <key>LSUIElement</key><true/>
   <key>NSHighResolutionCapable</key><true/>

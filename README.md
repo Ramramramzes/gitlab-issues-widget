@@ -4,7 +4,7 @@
 
 Виджет рабочего стола macOS для задач, назначенных вам в GitLab. Просматривайте задачи из разных проектов, замечайте блокировки и вносите изменения прямо с рабочего стола.
 
-[![Скачать GitLab Issues для macOS](docs/download/ru.svg)](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.1/GitLab-Issues-3.1.1-macOS.zip)
+[![Скачать GitLab Issues для macOS](docs/download/ru.svg)](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.2/GitLab-Issues-3.1.2-macOS.zip)
 
 [Установка](#установка) · [Быстрый старт](#быстрый-старт) · [Решение проблем](#решение-проблем)
 
@@ -25,7 +25,7 @@
 
 Требуется **macOS 13 Ventura или новее**. В ZIP находится универсальная сборка для **Apple Silicon и Intel**. Виджет подключается к **GitLab.com** или к вашему серверу **GitLab** по HTTPS.
 
-1. [Скачайте ZIP с GitLab Issues 3.1.1](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.1/GitLab-Issues-3.1.1-macOS.zip).
+1. [Скачайте ZIP с GitLab Issues 3.1.2](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.2/GitLab-Issues-3.1.2-macOS.zip).
 2. Распакуйте архив и перенесите **GitLab Issues.app** в папку **«Программы»**.
 3. Откройте приложение. Иконка списка в строке меню открывает виджет и его настройки.
 

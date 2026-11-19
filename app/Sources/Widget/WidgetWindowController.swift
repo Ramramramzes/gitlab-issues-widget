@@ -11,16 +11,12 @@ final class WidgetWindowController: NSObject {
     init(model: WidgetModel) {
         self.model = model
         window = DesktopPanel(contentRect: NSRect(x: 26, y: 120, width: 400, height: 440),
-                              styleMask: [.borderless, .resizable, .nonactivatingPanel],
-                              backing: .buffered, defer: false)
+                              styleMask: [.borderless, .resizable, .nonactivatingPanel])
         super.init()
 
         window.title = "GitLab Issues"
         window.isRestorable = false
         window.isReleasedWhenClosed = false
-        window.isOpaque = false
-        window.backgroundColor = .clear
-        window.hasShadow = true
         window.isMovableByWindowBackground = true
         window.hidesOnDeactivate = false
         window.isFloatingPanel = false

@@ -4,7 +4,7 @@
 
 A native macOS desktop widget for the GitLab issues assigned to you. See your work across projects, spot blockers, and update issues from your desktop.
 
-[![Download GitLab Issues for macOS](docs/download/en.svg)](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.1/GitLab-Issues-3.1.1-macOS.zip)
+[![Download GitLab Issues for macOS](docs/download/en.svg)](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.2/GitLab-Issues-3.1.2-macOS.zip)
 
 [Get the app](#get-the-app) · [Quick start](#quick-start) · [Troubleshooting](#troubleshooting)
 
@@ -25,7 +25,7 @@ A native macOS desktop widget for the GitLab issues assigned to you. See your wo
 
 The app requires **macOS 13 Ventura or later**. The ZIP includes a universal build for **Apple Silicon and Intel**. The app connects to **GitLab.com** or a **self-managed GitLab** instance over HTTPS.
 
-1. [Download GitLab Issues 3.1.1 for macOS](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.1/GitLab-Issues-3.1.1-macOS.zip).
+1. [Download GitLab Issues 3.1.2 for macOS](https://github.com/Ramramramzes/gitlab-issues-widget/releases/download/v3.1.2/GitLab-Issues-3.1.2-macOS.zip).
 2. Extract the ZIP and move **GitLab Issues.app** to **Applications**.
 3. Open the app. The checklist icon in the menu bar opens the widget and its settings.
 

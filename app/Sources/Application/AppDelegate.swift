@@ -73,14 +73,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         settingsWindow?.close()
         let initial = widgetWindow.currentGeometry()
         let panel = DesktopPanel(contentRect: NSRect(x: 0, y: 0, width: 360, height: 490),
-                                 styleMask: [.borderless, .resizable], backing: .buffered, defer: false)
+                                 styleMask: [.borderless, .resizable])
         panel.allowsMainWindow = true
         panel.title = tr("Настройки виджета")
         panel.isRestorable = false
         panel.isReleasedWhenClosed = false
-        panel.isOpaque = false
-        panel.backgroundColor = .clear
-        panel.hasShadow = true
         panel.hidesOnDeactivate = false
         panel.isMovableByWindowBackground = true
         panel.level = .normal
@@ -125,16 +122,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let width = max(320, min(window.frame.width, 620))
         let height = max(400, min(window.frame.height, 700))
         let panel = DesktopPanel(contentRect: NSRect(x: 0, y: 0, width: width, height: height),
-                                 styleMask: [.borderless, .resizable], backing: .buffered, defer: false)
+                                 styleMask: [.borderless, .resizable])
         panel.allowsMainWindow = true
         let title = issue.map { issue in WidgetMessage { tr("Редактирование задачи · %@", issue.number) } } ?? "Новая задача"
         editorTitle = title
         panel.title = title.text
         panel.isRestorable = false
         panel.isReleasedWhenClosed = false
-        panel.isOpaque = false
-        panel.backgroundColor = .clear
-        panel.hasShadow = true
         panel.isMovableByWindowBackground = true
         panel.hidesOnDeactivate = false
         panel.level = .normal

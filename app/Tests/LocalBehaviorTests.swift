@@ -126,6 +126,9 @@ func verifyLocalBehavior(configuration: Configuration, selfManaged: Configuratio
         let model = WidgetModel()
         assert(model.issues.isEmpty && model.loginRequired && !model.editingEnabled)
         let backdrop = glassHostingView(EmptyView())
+        assert(backdrop.layer?.masksToBounds == true && backdrop.layer?.cornerRadius == 24,
+               "Hosted content must follow the rounded edge of the glass")
+        assert(backdrop.layer?.cornerCurve == .continuous)
         if #available(macOS 26.0, *), let glassClass = NSClassFromString("NSGlassEffectView") as? NSView.Type {
             assert(backdrop.isKind(of: glassClass), "Supported systems must use native Liquid Glass")
             assert((backdrop.value(forKey: "style") as? NSNumber)?.intValue == 0,
